@@ -6,6 +6,9 @@
  */
 function sortProductsByPriceDescending(products) {
   // ここに実装してください。
+  return products.slice().sort((a,b) => {
+    return b.price - a.price;
+  });
 }
 
 // 自己申告:
