@@ -89,6 +89,45 @@ result[status]
 
 ここで変更しているのは、`reduce`のために新しく作った初期値のオブジェクトです。入力配列は変更していません。
 
+## 要素をグループ化する
+
+頻度表では各キーに数値を保存しましたが、グループ化では各キーに配列を保存します。
+
+```js
+const users = [
+  { name: "Haru", team: "A" },
+  { name: "Sora", team: "B" },
+  { name: "Ren", team: "A" },
+];
+
+const grouped = users.reduce((groups, user) => {
+  const team = user.team;
+
+  if (groups[team] === undefined) {
+    groups[team] = [];
+  }
+
+  groups[team].push(user);
+  return groups;
+}, {});
+```
+
+結果：
+
+```js
+{
+  A: [
+    { name: "Haru", team: "A" },
+    { name: "Ren", team: "A" },
+  ],
+  B: [
+    { name: "Sora", team: "B" },
+  ],
+}
+```
+
+初めて登場したキーでは、要素を入れる空配列を先に作ります。その後、対応する配列へ現在の要素を`push()`します。
+
 ## `sort`とは
 
 配列の要素を並べ替えるメソッドです。ただし、`sort()`は呼び出した元配列を変更します。
