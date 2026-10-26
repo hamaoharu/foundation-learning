@@ -8,6 +8,7 @@
  */
 function getUserField(user, fieldName) {
   // ここに実装してください。
+  return user[fieldName] ?? null;
 }
 
 // 自己申告:
