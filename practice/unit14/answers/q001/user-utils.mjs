@@ -4,8 +4,9 @@
  * @param {string} name
  * @returns {string}
  */
-function formatUserName(name) {
+export function formatUserName(name) {
   // ここに実装してください。
+  return name.trim().toLowerCase();
 }
 
 // この関数を名前付きexportしてください。

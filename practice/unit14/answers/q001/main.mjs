@@ -1,8 +1,9 @@
 // formatUserNameを名前付きimportしてください。
+import { formatUserName } from "./user-utils.mjs";
 
 const rawName = "  HARU  ";
 
-const formattedName = undefined;
+const formattedName = formatUserName(rawName);
 
 console.log(formattedName);
 
