@@ -6,8 +6,9 @@ export const taxRate = 0.1;
  * @param {{ name: string, price: number }} product
  * @returns {string}
  */
-function formatProduct(product) {
+export default function formatProduct(product) {
   // ここに実装してください。
+  return `${product.name}: ${product.price * (1 + taxRate)}円`;
 }
 
 // formatProductをdefault exportしてください。

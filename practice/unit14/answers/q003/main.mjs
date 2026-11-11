@@ -1,5 +1,6 @@
 // default exportをcreateProductLabelという名前で受け取り、
 // taxRateも同じimport文で名前付きimportしてください。
+import createProductLabel, {taxRate} from "./product-utils.mjs";
 
 const product = {
   name: "Keyboard",
