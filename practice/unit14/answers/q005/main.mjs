@@ -9,8 +9,10 @@ const orders = [
   { id: 3, status: "paid", price: 2300 },
 ];
 
-const count = getPaidOrders(orders).length;
-const total = calculateTotal(getPaidOrders(orders));
+const paidOrders = getPaidOrders(orders);
+
+const count = paidOrders.length;
+const total = calculateTotal(paidOrders);
 const report = createOrderReport(count, total);
 
 // 抽出 → 集計 → 表示用文字列の作成、の順に処理してください。
