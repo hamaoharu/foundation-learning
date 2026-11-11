@@ -6,6 +6,7 @@
  */
 export function addTax(price) {
   // ここに実装してください。
+  return price * 1.1;
 }
 
 /**
@@ -16,5 +17,6 @@ export function addTax(price) {
  */
 export function formatYen(price) {
   // ここに実装してください。
+  return `${price}円`;
 }
 
