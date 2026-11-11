@@ -5,9 +5,9 @@
  * @param {number} total
  * @returns {string}
  */
-function createOrderReport(count, total) {
+export default function createOrderReport(count, total) {
   // ここに実装してください。
+  return `支払い済み: ${count}件 / 合計: ${total}円`;
 }
 
 // createOrderReportをdefault exportしてください。
-

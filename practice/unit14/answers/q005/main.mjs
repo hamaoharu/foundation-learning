@@ -1,11 +1,17 @@
 // order-utils.mjsから2つの関数を名前付きimportしてください。
 // report-utils.mjsのdefault exportもimportしてください。
+import { getPaidOrders, calculateTotal } from "./order-utils.mjs";
+import createOrderReport from "./report-utils.mjs";
 
 const orders = [
   { id: 1, status: "paid", price: 1200 },
   { id: 2, status: "pending", price: 800 },
   { id: 3, status: "paid", price: 2300 },
 ];
+
+const count = getPaidOrders(orders).length;
+const total = calculateTotal(getPaidOrders(orders));
+const report = createOrderReport(count, total);
 
 // 抽出 → 集計 → 表示用文字列の作成、の順に処理してください。
 

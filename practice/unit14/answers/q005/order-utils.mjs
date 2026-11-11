@@ -6,6 +6,9 @@
  */
 export function getPaidOrders(orders) {
   // ここに実装してください。
+  return orders.filter((order) => {
+    return order.status === "paid";
+  });
 }
 
 /**
@@ -16,5 +19,10 @@ export function getPaidOrders(orders) {
  */
 export function calculateTotal(orders) {
   // ここに実装してください。
+  let price = 0;
+  for(const order of orders){
+    price += order.price;
+  }
+  return price;
 }
 
