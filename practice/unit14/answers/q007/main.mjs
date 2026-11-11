@@ -1,4 +1,5 @@
 // createTaskSummaryだけを名前付きimportしてください。
+import { createTaskSummary } from "./task-service.mjs";
 
 const tasks = [
   { id: 1, title: "HTML", completed: true },
@@ -7,6 +8,8 @@ const tasks = [
 ];
 
 // createTaskSummaryを呼び出し、戻り値を表示してください。
+const summary = createTaskSummary(tasks);
+console.log(summary);
 
 // 期待する出力:
 // 完了: 2/3件 (67%)

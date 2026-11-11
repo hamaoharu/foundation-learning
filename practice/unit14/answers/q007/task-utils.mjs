@@ -6,5 +6,8 @@
  */
 export function getCompletedTasks(tasks) {
   // ここに実装してください。
+  return tasks.filter((task) => {
+    return task.completed;
+  })
 }
 

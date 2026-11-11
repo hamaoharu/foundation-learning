@@ -5,8 +5,10 @@
  * @param {number} totalCount
  * @returns {string}
  */
-function createProgressReport(completedCount, totalCount) {
+export default function createProgressReport(completedCount, totalCount) {
   // ここに実装してください。
+  const completeRate = totalCount !== 0 ? Math.round(completedCount / totalCount * 100) : 0;
+  return `完了: ${completedCount}/${totalCount}件 (${completeRate}%)`;
 }
 
 // createProgressReportをdefault exportしてください。
