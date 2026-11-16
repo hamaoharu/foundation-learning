@@ -8,9 +8,20 @@ import { normalizeEmail } from "./q004-answer.mjs";
  */
 export function getEmailResult(email) {
   // try/catchを使って実装してください。
+  try{
+    return {
+      ok: true,
+      email: normalizeEmail(email),
+    };
+  }catch(error){
+    return {
+      ok: false,
+      error: `${error.name}: ${error.message}`,
+    };
+  }
 }
 
 // 自己申告:
-// 資料を参照したか:
+// 資料を参照したか: あり
 // 確信がない箇所:
 // 実行して修正した箇所:
