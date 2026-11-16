@@ -6,5 +6,13 @@
  */
 export function parseActiveUserNames(jsonText) {
   // ここに実装してください。
+  const parse = JSON.parse(jsonText);
+  if(!Array.isArray(parse)){
+    throw new TypeError("users must be an array");
+  }
+  return parse.filter((user) => {
+    return user.active;
+  }).map((user) => {
+    return user.name.trim();
+  })
 }
-

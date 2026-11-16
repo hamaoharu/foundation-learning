@@ -1,4 +1,5 @@
 // parseActiveUserNamesを名前付きimportしてください。
+import { parseActiveUserNames } from "./user-service.mjs";
 
 /**
  * ユーザーJSONの処理結果を成功・失敗オブジェクトで返す。
@@ -9,6 +10,21 @@
  */
 export function createUserResult(jsonText, logs) {
   // try/catch/finallyを使って実装してください。
+  try {
+    logs.push("start");
+    const activeUserNames = parseActiveUserNames(jsonText);
+    return {
+      ok: true,
+      names: activeUserNames,
+    };
+  }catch (error){
+    return {
+      ok: false,
+      error: `${error.name}: ${error.message}`,
+    };
+  }finally {
+    logs.push("end");
+  }
 }
 
 const jsonText = `[

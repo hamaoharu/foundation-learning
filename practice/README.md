@@ -4,9 +4,9 @@
 
 ## 現在地
 
-- Unit 1〜14：完了
-- Unit 15「例外処理・デバッグ」：進行中
-- 全25 Unit中14 Unit完了
+- Unit 1〜15：完了
+- Unit 16「Promiseの基礎」：進行中
+- 全25 Unit中15 Unit完了
 
 日付、判定根拠、要復習項目は[progress.md](./progress.md)を参照してください。
 
