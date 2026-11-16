@@ -7,6 +7,17 @@
  */
 export function parseJsonWithLog(jsonText, logs) {
   // try/catch/finallyを使って実装してください。
+  try {
+    logs.push("start");
+    const parse = JSON.parse(jsonText);
+    logs.push("success");
+    return parse;
+  }catch (error){
+    logs.push(`error: ${error.name}`);
+    return null;
+  }finally {
+    logs.push("end");
+  }
 }
 
 // 自己申告:
