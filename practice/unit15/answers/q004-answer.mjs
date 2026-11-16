@@ -7,6 +7,14 @@
  */
 export function normalizeEmail(email) {
   // ここに実装してください。
+  if(typeof email !== "string"){
+    throw new TypeError("email must be a string");
+  }
+  if(email.trim() === ""){
+    throw new Error("email is required");
+  }
+
+  return email.trim().toLowerCase();
 }
 
 // 自己申告:
