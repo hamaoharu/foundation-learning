@@ -18,6 +18,6 @@ export function normalizeEmail(email) {
 }
 
 // 自己申告:
-// 資料を参照したか:
+// 資料を参照したか: あり
 // 確信がない箇所:
 // 実行して修正した箇所:
