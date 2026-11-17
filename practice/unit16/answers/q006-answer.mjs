@@ -19,6 +19,24 @@ function getUsers(shouldSucceed) {
  */
 export function getActiveUserNames(shouldSucceed, logs) {
   // getUsersからPromise chainを組み立ててください。
+  return getUsers(shouldSucceed).then((users) => {
+    const activeUsers = users.filter((user) => {
+      return user.active;
+    })
+    logs.push("filtered");
+    return activeUsers;
+  }).then((activeUsers) => {
+    const activeUserNames = activeUsers.map((user) => {
+      return user.name.trim();
+    })
+    logs.push("mapped");
+    return activeUserNames;
+  }).catch((error) => {
+    logs.push(`error: ${error.message}`);
+    return [];
+  }).finally(() => {
+    logs.push("end");
+  })
 }
 
 // 自己申告:
