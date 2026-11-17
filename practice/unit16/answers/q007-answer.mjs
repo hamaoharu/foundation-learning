@@ -26,6 +26,37 @@ function getOrders(mode) {
  */
 export function summarizePaidOrders(mode, logs) {
   // getOrdersからPromise chainを組み立ててください。
+  return getOrders(mode).then((value) => {
+    if(Array.isArray(value)){
+      logs.push("validated");
+      return value;
+    }
+    throw new TypeError("orders must be an array");
+  }).then((orders) => {
+    const paidOrders = orders.filter((order) => {
+      return order.status === "paid";
+    })
+    logs.push("filtered");
+    return paidOrders;
+  }).then((paidOrders) => {
+    const total = paidOrders.reduce((total, order) => {
+      return total + order.price;
+    }, 0)
+    logs.push("summarized");
+    return {
+      count: paidOrders.length,
+      total,
+    }
+  }).catch((error) => {
+    logs.push("error");
+    return {
+      count: 0,
+      total: 0,
+      error: `${error.name}: ${error.message}`,
+    };
+  }).finally(() => {
+    logs.push("end");
+  })
 }
 
 // 自己申告:
