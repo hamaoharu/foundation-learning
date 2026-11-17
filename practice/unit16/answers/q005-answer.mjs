@@ -16,6 +16,15 @@ function getScore(shouldSucceed) {
 export function formatScore(shouldSucceed, logs) {
   // getScoreが返すPromiseへthen/catch/finallyをつないでください。
   // Promise chain全体をreturnしてください。
+  return getScore(shouldSucceed).then((value) => {
+    logs.push("success");
+    return `Score: ${value}`;
+  }).catch((error) => {
+    logs.push(`error: ${error.message}`);
+    return "Score: unavailable"
+  }).finally(() => {
+    logs.push("end");
+  })
 }
 
 // 自己申告:
