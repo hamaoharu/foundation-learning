@@ -27,6 +27,26 @@ function fetchSettings(shouldSucceed) {
  */
 export async function loadDashboard(shouldSucceed, logs) {
   // Promise.allとtry/catch/finallyを使って実装してください。
+  try {
+    const [user, settings] = await Promise.all([
+      fetchUser(),
+      fetchSettings(shouldSucceed),
+    ])
+    logs.push("loaded");
+    return {
+      userName: user.name,
+      theme: settings.theme,
+    };
+  }catch(error) {
+    logs.push("error");
+    return {
+      userName: "Guest",
+      theme: "light",
+      error: error.message,
+    };
+  }finally {
+    logs.push("end");
+  }
 }
 
 // 自己申告:
