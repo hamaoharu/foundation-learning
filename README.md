@@ -7,9 +7,9 @@ React・TypeScript・Next.jsを使った開発経験はある一方、AIによ�
 ## 現在の進捗
 
 - 学習開始：2026-10-08
-- 完了：Unit 1〜16
-- 進行中：Unit 17「async/awaitと並行処理」
-- 全体：16 / 25 Unit完了（64%）
+- 完了：Unit 1〜17
+- 進行中：Unit 18「イベントループとキャンセル」
+- 全体：17 / 25 Unit完了（68%）
 
 詳細は[学習進捗](./practice/progress.md)を参照してください。
 
@@ -29,6 +29,7 @@ React・TypeScript・Next.jsを使った開発経験はある一方、AIによ�
 - ES Modules、モジュールスコープ、責務分割、依存関係
 - エラーの原因特定、`throw`、`try/catch/finally`、例外伝播
 - Promiseの状態、chain、成功値とエラーの伝播
+- async/await、逐次・並行処理、`Promise.all()`
 
 間違えた内容は消さず、回答・レビュー・修正過程を残しています。理解できた説明だけで完了とせず、後続Unitの問題へ過去単元を組み込み、再び自力で使えるか確認します。
 

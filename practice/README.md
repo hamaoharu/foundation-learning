@@ -4,9 +4,9 @@
 
 ## 現在地
 
-- Unit 1〜16：完了
-- Unit 17「async/awaitと並行処理」：進行中
-- 全25 Unit中16 Unit完了
+- Unit 1〜17：完了
+- Unit 18「イベントループとキャンセル」：進行中
+- 全25 Unit中17 Unit完了
 
 日付、判定根拠、要復習項目は[progress.md](./progress.md)を参照してください。
 
