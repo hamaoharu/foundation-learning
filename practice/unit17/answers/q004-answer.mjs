@@ -15,6 +15,16 @@ function getScore(shouldSucceed) {
  */
 export async function formatScore(shouldSucceed, logs) {
   // async/awaitとtry/catch/finallyで実装してください。
+  try {
+    const score = await getScore(shouldSucceed);
+    logs.push("success");
+    return `Score: ${score}`;
+  }catch (error){
+    logs.push(`error: ${error.message}`);
+    return "Score: unavailable";
+  }finally {
+    logs.push("end");
+  }
 }
 
 // 自己申告:
